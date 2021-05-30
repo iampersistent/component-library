@@ -1,1 +1,1 @@
-# component-library
+# Component Library
