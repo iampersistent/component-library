@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledButton } from './styles';
+import PropTypes from "prop-types";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     color?: "secondary" | "primary" | "danger";
@@ -30,4 +31,9 @@ Button.defaultProps = {
     color: "primary",
     size: "medium",
     isFullWidth: false,
+};
+Button.propTypes = {
+    color: PropTypes.oneOf(['secondary', 'primary', 'danger']),
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    isFullWidth: PropTypes.bool,
 };
