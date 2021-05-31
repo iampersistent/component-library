@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 import {
-    SECONDARY_COLOR,
-    SECONDARY_TEXT_COLOR,
-    PRIMARY_COLOR,
-    DISABLED_OPACITY,
+  SECONDARY_COLOR,
+  SECONDARY_TEXT_COLOR,
+  PRIMARY_COLOR,
+  DISABLED_OPACITY,
 } from '../utils/styles';
-import {TextareaProps} from "./Textarea";
+import { TextareaProps } from './Textarea';
 
 export const StyledLabel = styled.label`
   font-weight: 500;
@@ -39,7 +39,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledTextarea = styled(StyledInput as 'textarea').attrs({
-    as: 'textarea',
+  as: 'textarea',
 })<TextareaProps>`
   resize: ${(props) => !props.isResizable && 'none'};
 `;
