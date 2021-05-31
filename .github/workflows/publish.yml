@@ -20,6 +20,7 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@iampersistent'
       - run: npm install
+      - run: echo "$GITHUB_TOKEN $secrets.GITHUB_TOKEN"
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
