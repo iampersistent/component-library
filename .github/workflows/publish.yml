@@ -9,16 +9,16 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '16.x'
-        registry-url: 'https://npm.pkg.github.com'
-        scope: '@iampersistent'
-    - run: yarn install
-    - run: yarn lint
-    - run: yarn test
-    - run: yarn build
-    - run: yarn publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@iampersistent'
+      - run: yarn install
+      - run: yarn lint
+      - run: yarn test
+      - run: yarn build
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
