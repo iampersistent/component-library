@@ -10,20 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@iampersistent'
-          always-auth: true
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint
-      - run: yarn test
-      - run: yarn build
-      - uses: actions/setup-node@v2
-        with:
-          always-auth: true
-          registry-url: 'https://npm.pkg.github.com'
-      - run: yarn publish
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
