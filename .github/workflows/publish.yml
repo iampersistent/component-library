@@ -15,7 +15,8 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@iampersistent'
-      - run: yarn install
+          always-auth: true
+      - run: yarn install --frozen-lockfile
       - run: yarn lint
       - run: yarn test
       - run: yarn build
