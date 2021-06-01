@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Create .npmrc
-        run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+      -   name: Configure NPM
+          run:  |
+                echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
+                echo '@iampersistent:registry=https://npm.pkg.github.com' >> .npmrc
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.PAT }}
       - run: yarn
       - run: yarn publish
