@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      -   name: Configure NPM
-          run:  |
-                echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" >> .npmrc
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+        with:
+          node-version: '16'
+      - name: Configure NPM
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" >> .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
       - run: npm install
       - run: npm publish
