@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/iampersistent/mcomponent-library.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "iampersistent <shank@zestic.com>",
   "license": "MIT",
   "dependencies": {
