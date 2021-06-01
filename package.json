@@ -7,7 +7,7 @@
   "types": "dist/typings/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iampersistent/mcomponent-library.git"
+    "url": "https://github.com/iampersistent/component-library.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
